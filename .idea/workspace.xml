@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d9257e7-7b3f-4ff8-afad-e7c29b9a0deb" name="Default Changelist" comment="card grid">
+      <change beforePath="$PROJECT_DIR$/committees/datacommittee.html" beforeDir="false" afterPath="$PROJECT_DIR$/committees/datacommittee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/committees/sciencecommittee.html" beforeDir="false" afterPath="$PROJECT_DIR$/committees/sciencecommittee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/committees/steeringcommittee.html" beforeDir="false" afterPath="$PROJECT_DIR$/committees/steeringcommittee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/committees/technicalcommittee.html" beforeDir="false" afterPath="$PROJECT_DIR$/committees/technicalcommittee.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+              <folding>
+                <element signature="e#4138#4146#0" expanded="true" />
+                <element signature="e#7242#7249#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/committees/datacommittee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="184" column="91" selection-start-line="184" selection-start-column="91" selection-end-line="184" selection-end-column="91" />
+              <folding>
+                <element signature="n#div#1;n#main#0;n#body#0;n#html#1;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/committees/technicalcommittee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="237" column="14" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="237" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/committees/sciencecommittee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="212" column="43" selection-start-line="212" selection-start-column="43" selection-end-line="212" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/committees/steeringcommittee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="242" column="45" selection-start-line="242" selection-start-column="45" selection-end-line="242" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Kobe2018new.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3765">
+              <caret line="251" column="6" selection-start-line="251" selection-start-column="6" selection-end-line="251" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/fileReader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/GEBCO.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>key=</find>
+      <find>history.png</find>
+      <find>toggleButton</find>
+      <find>showTail</find>
+      <find>useCallback</find>
+      <find>dataPoints</find>
+      <find>showDict</find>
+      <find>owner</find>
+      <find>addToMap</find>
+      <find>clearMarkers</find>
+      <find>style.css</find>
+      <find>legend</find>
+      <find>water</find>
+      <find>aux</find>
+      <find>j</find>
+      <find>deploymen</find>
+      <find>kobe</find>
+      <find>MERMAID</find>
+      <find>Deployments</find>
+      <find>jpg</find>
+      <find>New</find>
+      <find>T</find>
+      <find>NEW</find>
+      <find>Kobe</find>
+      <find>Tahiti</find>
+      <find>KOBE</find>
+      <find>CALEDO</find>
+      <find>Home</find>
+      <find>Mem</find>
+      <find>Membe</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/SacFile.js" />
+        <option value="$PROJECT_DIR$/bootstrap/index.html" />
+        <option value="$PROJECT_DIR$/geoTest.gtml" />
+        <option value="$PROJECT_DIR$/aux/geoMapEntries.csv" />
+        <option value="$PROJECT_DIR$/scripts/Entry.js" />
+        <option value="$PROJECT_DIR$/geoTest.html" />
+        <option value="$PROJECT_DIR$/scripts/geoMap.js" />
+        <option value="$PROJECT_DIR$/scripts/GEBCO.js" />
+        <option value="$PROJECT_DIR$/scripts/fileReader.js" />
+        <option value="$PROJECT_DIR$/bootstrap/archiveIndex.html" />
+        <option value="$PROJECT_DIR$/scripts/DataPoint.js" />
+        <option value="$PROJECT_DIR$/scripts/map.js" />
+        <option value="$PROJECT_DIR$/aux/style.css" />
+        <option value="$PROJECT_DIR$/Kobe2018new.html" />
+        <option value="$PROJECT_DIR$/SouthPacific.html" />
+        <option value="$PROJECT_DIR$/Wallis2018.html" />
+        <option value="$PROJECT_DIR$/Tahiti2018.html" />
+        <option value="$PROJECT_DIR$/Kobe2018.html" />
+        <option value="$PROJECT_DIR$/NewCaledonia2018.html" />
+        <option value="$PROJECT_DIR$/SouthPacific2019.html" />
+        <option value="$PROJECT_DIR$/Polynesia2018.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/committees/steeringcommittee.html" />
+        <option value="$PROJECT_DIR$/committees/technicalcommittee.html" />
+        <option value="$PROJECT_DIR$/committees/datacommittee.html" />
+        <option value="$PROJECT_DIR$/committees/sciencecommittee.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="549" />
+    <option name="y" value="23" />
+    <option name="width" value="891" />
+    <option name="height" value="837" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="earthscopeoceans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="earthscopeoceans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="earthscopeoceans" type="b2602c69:ProjectViewProjectNode" />
+              <item name="earthscopeoceans" type="462c0819:PsiDirectoryNode" />
+              <item name="committees" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/aux/extra" />
+      <recent name="$PROJECT_DIR$/aux" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d9257e7-7b3f-4ff8-afad-e7c29b9a0deb" name="Default Changelist" comment="" />
+      <created>1556482682383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556482682383</updated>
+      <workItem from="1556482684443" duration="527000" />
+      <workItem from="1556487078880" duration="3886000" />
+      <workItem from="1556812576085" duration="3061000" />
+      <workItem from="1560271120037" duration="2125000" />
+      <workItem from="1560291836775" duration="47000" />
+      <workItem from="1560308792953" duration="156000" />
+      <workItem from="1560345415562" duration="1048000" />
+      <workItem from="1560801786083" duration="4000" />
+      <workItem from="1560881286806" duration="61000" />
+      <workItem from="1560884779768" duration="223000" />
+      <workItem from="1560907555451" duration="624000" />
+      <workItem from="1562077516574" duration="71000" />
+      <workItem from="1563373517511" duration="382000" />
+      <workItem from="1563375815525" duration="3552000" />
+      <workItem from="1563478258376" duration="376000" />
+      <workItem from="1563483386908" duration="1745000" />
+      <workItem from="1563551412722" duration="77000" />
+      <workItem from="1563563757340" duration="399000" />
+      <workItem from="1563893070318" duration="3471000" />
+      <workItem from="1564070646507" duration="141000" />
+      <workItem from="1564172820223" duration="272000" />
+      <workItem from="1564600151332" duration="213000" />
+      <workItem from="1565269424805" duration="339000" />
+      <workItem from="1565275946842" duration="2031000" />
+      <workItem from="1565355912654" duration="195000" />
+      <workItem from="1565889458165" duration="1127000" />
+      <workItem from="1566346508987" duration="560000" />
+      <workItem from="1566774173915" duration="206000" />
+      <workItem from="1566826139572" duration="211000" />
+      <workItem from="1570632028366" duration="4697000" />
+      <workItem from="1570672039230" duration="3624000" />
+      <workItem from="1570719292491" duration="2305000" />
+      <workItem from="1571192879073" duration="406000" />
+      <workItem from="1573483970478" duration="1294000" />
+      <workItem from="1573519680535" duration="1585000" />
+      <workItem from="1573669227765" duration="25000" />
+      <workItem from="1573669353693" duration="357000" />
+      <workItem from="1574831314568" duration="2643000" />
+      <workItem from="1575301031872" duration="1130000" />
+      <workItem from="1575321554875" duration="318000" />
+      <workItem from="1575472176424" duration="798000" />
+      <workItem from="1577329243775" duration="62000" />
+      <workItem from="1578272854179" duration="192000" />
+      <workItem from="1578273264796" duration="943000" />
+      <workItem from="1578699214716" duration="582000" />
+      <workItem from="1578881353391" duration="11000" />
+      <workItem from="1579205399540" duration="1105000" />
+      <workItem from="1579305236650" duration="1621000" />
+      <workItem from="1579356205977" duration="2593000" />
+      <workItem from="1579404103465" duration="135000" />
+      <workItem from="1579648563718" duration="14000" />
+      <workItem from="1579714996130" duration="461000" />
+      <workItem from="1579873449846" duration="19000" />
+      <workItem from="1581970388875" duration="1192000" />
+      <workItem from="1583167118372" duration="936000" />
+      <workItem from="1583762171458" duration="2488000" />
+      <workItem from="1583770954263" duration="1000" />
+      <workItem from="1583770986910" duration="7206000" />
+      <workItem from="1583864010008" duration="2941000" />
+      <workItem from="1583869572213" duration="2853000" />
+      <workItem from="1583958701032" duration="4028000" />
+      <workItem from="1585103241151" duration="25000" />
+      <workItem from="1585176012250" duration="10000" />
+      <workItem from="1585930943436" duration="359000" />
+      <workItem from="1586619081069" duration="1648000" />
+      <workItem from="1586896609270" duration="12000" />
+      <workItem from="1588726024838" duration="3000" />
+      <workItem from="1589290387144" duration="4502000" />
+      <workItem from="1598539030329" duration="365000" />
+      <workItem from="1598570264491" duration="828000" />
+      <workItem from="1599057451495" duration="11000" />
+      <workItem from="1599073085227" duration="2616000" />
+      <workItem from="1600721949039" duration="409000" />
+      <workItem from="1601306463690" duration="8000" />
+      <workItem from="1602009873043" duration="68000" />
+      <workItem from="1602009959308" duration="520000" />
+      <workItem from="1602018209168" duration="1726000" />
+      <workItem from="1602038164594" duration="1583000" />
+      <workItem from="1602086945317" duration="3000" />
+      <workItem from="1602268512084" duration="706000" />
+      <workItem from="1602269434474" duration="495000" />
+      <workItem from="1602607192428" duration="16000" />
+      <workItem from="1609268740756" duration="1513000" />
+      <workItem from="1609432361420" duration="2298000" />
+    </task>
+    <task id="LOCAL-00001" summary="Switching editors for the sake of formatting">
+      <created>1556482931754</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556482931755</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Switching editors for the sake of formatting">
+      <created>1556483017940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556483017940</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactoring">
+      <created>1556488458556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1556488458556</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactoring/ UI adjustments">
+      <created>1556489892365</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556489892365</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Getting rid of some redundancy before potentially switching to JSON">
+      <created>1560308903326</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560308903326</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removing pan temporarily">
+      <created>1563483431673</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563483431673</updated>
+    </task>
+    <task id="LOCAL-00007" summary="esc to close info windows">
+      <created>1563893414272</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563893414272</updated>
+    </task>
+    <task id="LOCAL-00008" summary="wrap around with arrow keys">
+      <created>1563894116483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563894116483</updated>
+    </task>
+    <task id="LOCAL-00009" summary="pan to fit infowindow">
+      <created>1563898451640</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1563898451640</updated>
+    </task>
+    <task id="LOCAL-00010" summary="pan to fit infowindows">
+      <created>1563898554690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1563898554690</updated>
+    </task>
+    <task id="LOCAL-00011" summary="formatting">
+      <created>1563898734783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563898734783</updated>
+    </task>
+    <task id="LOCAL-00012" summary="about to add legend">
+      <created>1565278338596</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565278338596</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added legend">
+      <created>1565278799774</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565278799774</updated>
+    </task>
+    <task id="LOCAL-00014" summary="altering color picking">
+      <created>1570637876990</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570637876990</updated>
+    </task>
+    <task id="LOCAL-00015" summary="adding floats">
+      <created>1570638125535</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1570638125536</updated>
+    </task>
+    <task id="LOCAL-00016" summary="switching to getOwner function">
+      <created>1579307007079</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1579307007079</updated>
+    </task>
+    <task id="LOCAL-00017" summary="about to make owner a field">
+      <created>1583852990559</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1583852990559</updated>
+    </task>
+    <task id="LOCAL-00018" summary="view by owner">
+      <created>1583855330338</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583855330338</updated>
+    </task>
+    <task id="LOCAL-00019" summary="updating gebco to work with the condensed filereader">
+      <created>1583869914710</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583869914710</updated>
+    </task>
+    <task id="LOCAL-00020" summary="switched over to bootstrap">
+      <created>1599075146321</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1599075146321</updated>
+    </task>
+    <task id="LOCAL-00021" summary="new pages done">
+      <created>1602268569806</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1602268569806</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="95419000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="549" y="23" width="891" height="837" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37691402" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.23012048" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49961802" visible="true" weight="0.2751678" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50038195" side_tool="true" weight="0.29864866" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39914164" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.23012048" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49961802" visible="true" weight="0.2686747" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50038195" side_tool="true" weight="0.29864866" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Switching editors for the sake of formatting" />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="Refactoring/ UI adjustments" />
+    <MESSAGE value="Getting rid of some redundancy before potentially switching to JSON" />
+    <MESSAGE value="removing pan temporarily" />
+    <MESSAGE value="esc to close info windows" />
+    <MESSAGE value="wrap around with arrow keys" />
+    <MESSAGE value="pan to fit infowindow" />
+    <MESSAGE value="pan to fit infowindows" />
+    <MESSAGE value="formatting" />
+    <MESSAGE value="about to add legend" />
+    <MESSAGE value="added legend" />
+    <MESSAGE value="altering color picking" />
+    <MESSAGE value="adding floats" />
+    <MESSAGE value="Slide button" />
+    <MESSAGE value="switching to getOwner function" />
+    <MESSAGE value="about to make owner a field" />
+    <MESSAGE value="view by owner" />
+    <MESSAGE value="updating gebco to work with the condensed filereader" />
+    <MESSAGE value="switched over to bootstrap" />
+    <MESSAGE value="new pages done" />
+    <MESSAGE value="card grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="card grid" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/infobubble.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="1780" lean-forward="true" selection-start-line="1780" selection-end-line="1780" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra/geoMapEntries.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geoTest.html" />
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10965">
+          <caret line="744" column="4" selection-start-line="744" selection-start-column="4" selection-end-line="744" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra/Pseed2" />
+    <entry file="file://$PROJECT_DIR$/extra/addtomapdotjs" />
+    <entry file="file://$PROJECT_DIR$/scripts/Entry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/geoMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4170">
+          <caret line="278" column="37" selection-start-line="278" selection-start-column="37" selection-end-line="278" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/index.html" />
+    <entry file="file://$PROJECT_DIR$/aux/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="87" selection-start-line="98" selection-start-column="84" selection-end-line="98" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/DataPoint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/archiveIndex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="21" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/SacFile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Polynesia2018.html" />
+    <entry file="file://$PROJECT_DIR$/SouthPacific2019.html" />
+    <entry file="file://$PROJECT_DIR$/NewCaledonia2018.html" />
+    <entry file="file://$PROJECT_DIR$/Kobe2018.html" />
+    <entry file="file://$PROJECT_DIR$/Tahiti2018.html" />
+    <entry file="file://$PROJECT_DIR$/Wallis2018.html" />
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#4138#4146#0" expanded="true" />
+            <element signature="e#7242#7249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kobe2018new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3765">
+          <caret line="251" column="6" selection-start-line="251" selection-start-column="6" selection-end-line="251" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/fileReader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/GEBCO.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/committees/steeringcommittee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="242" column="45" selection-start-line="242" selection-start-column="45" selection-end-line="242" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/committees/technicalcommittee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="237" column="14" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="237" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/committees/datacommittee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="184" column="91" selection-start-line="184" selection-start-column="91" selection-end-line="184" selection-end-column="91" />
+          <folding>
+            <element signature="n#div#1;n#main#0;n#body#0;n#html#1;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/committees/sciencecommittee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="212" column="43" selection-start-line="212" selection-start-column="43" selection-end-line="212" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

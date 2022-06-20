@@ -7,7 +7,7 @@ function makeWMSrequest(dataPoint) {
     stlam = parseFloat(dataPoint.stla) + bb;
     stlom = parseFloat(dataPoint.stlo) + bb;
 
-    const rqtHead = 'http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?';
+    const rqtHead = 'https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?';
 
     // Integer width and height of the map (when requesting a feature, keep it small!)
     const pxw = 5;
