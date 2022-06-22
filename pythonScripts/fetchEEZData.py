@@ -4,30 +4,30 @@ import json #Necessary for parsing the data into and out of Json format
 #Grab all EEZ's from Marineregions.org
 data = []
 for i in range(3):
-    res = urllib2.urlopen('https://marineregions.org/rest/getGazetteerRecordsByType.json/eez/?offset={}'.format(100*i))
-    tempData = res.read()
-    tempData = json.loads(tempData)
-    data = data + tempData
+	res = urllib2.urlopen('https://marineregions.org/rest/getGazetteerRecordsByType.json/eez/?offset={}'.format(100*i))
+	tempData = res.read()
+	tempData = json.loads(tempData)
+	data = data + tempData
 
 #Decode EEZ information and transform it into an object with only the pertinent information
 dataObj = []
 MRGIDList = []
 for i in data:
-    if i["minLatitude"] is None:
-	continue
-    obj = ({"MRGID": i["MRGID"], "preferredGazetteerName": i["preferredGazetteerName"], "latitude": i["latitude"],
-	   "longitude": i["longitude"], "minLatitude": i["minLatitude"], "minLongitude": i["minLongitude"],
-	   "maxLatitude": i["maxLatitude"], "maxLongitude": i["maxLongitude"]})
-    dataObj.append(obj)
-    MRGIDList.append(i["MRGID"])
+	if i["minLatitude"] is None:
+		continue
+	obj = ({"MRGID": i["MRGID"], "preferredGazetteerName": i["preferredGazetteerName"], "latitude": i["latitude"],
+		   "longitude": i["longitude"], "minLatitude": i["minLatitude"], "minLongitude": i["minLongitude"],
+		   "maxLatitude": i["maxLatitude"], "maxLongitude": i["maxLongitude"]})
+	dataObj.append(obj)
+	MRGIDList.append(i["MRGID"])
 str = json.dumps(dataObj)
 str2 = json.dumps(MRGIDList)
 
 #Write the data into files
 with open('/home/www/people/sk8609/DEVearthscopeoceans/EEZData/AllEEZ','w') as f:
-    f.write(str)
-    f.close()
+	f.write(str)
+	f.close()
 
 with open('/home/www/people/sk8609/DEVearthscopeoceans/EEZData/MRGIDList','w') as f:
-    f.write(str2)
-    f.close()
+	f.write(str2)
+	f.close()
