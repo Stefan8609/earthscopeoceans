@@ -1,3 +1,7 @@
+/*
+  Last modified by Stefan Kildal-Brandt, 6-27-2022
+ */
+
 //Point in Polygon function borrowed from https://www.algorithms-and-technologies.com/point_in_polygon/javascript
 function pointInPolygon(point, polygon){
 	let inside = false;
