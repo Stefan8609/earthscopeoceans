@@ -589,8 +589,10 @@ async function initMap(listener) {
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
+                //Adds a listener that can tell when and where the map is clicked
                 dropListener = google.maps.event.addDomListener(map, 'click', async function(dropEvent) {
                         clearMarkers();
+                        //Add a marker based on where map is clicked
                         marker = new google.maps.Marker({
                                 position: dropEvent.latLng,
                                 map: map,
@@ -602,6 +604,7 @@ async function initMap(listener) {
                         EEZ = await eezFinder(lat, lng, EEZList, AllGeometries);
                         GEBCODepth = await makeWMSrequestCoords(lat, lng);
                         markers.push(marker);
+                        //Sets an info marker for the map
                         setInfoWindow('drop', 0, 0, marker, 0, 0, 0, 0, 0, 0, 0, GEBCODepth, EEZ, lat, lng);
                         google.maps.event.trigger(marker, 'click');
                     });
