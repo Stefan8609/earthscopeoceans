@@ -1,1 +1,15 @@
-JavaScript
+JavaScript Scripts that give the map its functionality
+
+-- map.js is the main script - It uses all of the other scripts to put markers onto the map
+and give each of them an info box with the pertinent information
+
+-- DataPoint.js - Calculates important info about each float and stores it in a DataPoint
+
+-- EEZ.js - Uses a given latitude and longitude to find the EEZ of a point
+
+-- GEBCO.js - Sends a rest request to the GEBCO api to get information about the depth
+of the location that a float is in
+
+-- fileReader.js - fetches float information from FJS's SOM
+
+-- infobubble.js - A git library by Luke Mahe which builds info bubbles

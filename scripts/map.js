@@ -1,6 +1,6 @@
 /**
  * Map class
- @author Jonah Rubin, Stefan Kildal-Brandt, and Frederik J Simons 6/22/2022
+ @author Jonah Rubin, Stefan Kildal-Brandt, and Frederik J Simons 6/28/2022
 */
 
 async function initMap(listener) {
@@ -97,6 +97,9 @@ async function initMap(listener) {
         });
 
     var IconColor = {};
+    
+    //inialize dropListener variable on top scope so that the listener can be removed at various places after it is enabled
+    var dropListener;
 
     // legend generation
     var legend = document.getElementById('legend');
@@ -118,6 +121,9 @@ async function initMap(listener) {
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
 
     google.maps.event.addDomListener(document.getElementById('toggle'), 'click', function () {
+            if (dropListener){
+                google.maps.event.removeListener(dropListener);
+            }
             showAll = !showAll;
             if (showAll === false) {
                 showTail = '_030.txt';
@@ -529,7 +535,6 @@ async function initMap(listener) {
     async function setUpEvents() {
         // make buttons dynamically - ALL numbers generated (but see below)... up to: numFloats
         // this is the maximum. Also need to set the labels explicitly in ../index.html.
-        var dropListener;
         addEvents("all");
         markerIndex = 0;
         allFloats = getAllFloatNames();
