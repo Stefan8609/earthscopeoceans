@@ -118,6 +118,7 @@ async function initMap(listener) {
     var toggle = document.getElementById('toggle');
     var div2 = document.createElement('div');
     var toggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
+    var revToggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png"
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
 
     google.maps.event.addDomListener(document.getElementById('toggle'), 'click', function () {
@@ -130,7 +131,12 @@ async function initMap(listener) {
             } else {
                 showTail = '_all.txt';
             }
-
+            if(showAll === true) {
+                document.getElementById('toggleButton').src=revToggleSrc
+            }
+            else {
+                document.getElementById('toggleButton').src=toggleSrc
+            }
             console.log("show all: " + showAll);
 
             // convert id then use
