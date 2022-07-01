@@ -1,9 +1,9 @@
-#Last modified by Stefan Kildal-Brandt 6/28/22
+#Written by Stefan Kildal-Brandt on 7/1/22
 
 import urllib2
 from urllib2 import HTTPError
-import math
 from datetime import datetime
+import math
 
 #Haversine Displacement Calculation
 def getDisplacement(datapt1, datapt2):
@@ -67,10 +67,6 @@ def getGEBCODepth(latlon):
         return data.split("\'")[7]
     except HTTPError as err:
         print(err)
-        return 0
-    except Exception as err:
-        print(err)
-        return 0
 
 #List of all floats at time of this scripts creation
 floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
@@ -83,63 +79,41 @@ floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
 "R0072", "R0073", "R0001", "R0002", "R0003", "R0004", "R0005", "R0007",
 "N0003", "P0007", "P0034", "P0047", "R0006"]
 
-#Script to grab and decode float data from Professor Simon's pages
-arr = []
-for i in floats:
-    url = "https://geoweb.princeton.edu/people/simons/SOM/{}_all.txt".format(i)
-    file = urllib2.urlopen(url)
-    temparr = []
-    for line in file:
-        decoded_line = line.decode("utf-8")
+for flo in floats:
+    print(flo)
+    file = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
+    fileArr = file.readlines()
+    fileArrLines = [fileArr[i].split(' ') for i in range(len(fileArr))]
+    file.close()
+
+    urlFile = urllib2.urlopen('https://geoweb.princeton.edu/people/simons/SOM/{}_all.txt'.format(flo))
+    urlArr = []
+    for line in urlFile:
+        decoded_line = line.decode('utf-8')
         lineArr = decoded_line.split()
-        if (lineArr[3] == "NaN") or (lineArr[4] == "NaN"):
+        if (lineArr[3] == "NaN") or (lineArr[4]=="NaN"):
             continue
-        dateStr = '{} {}'.format(lineArr[1], lineArr[2])
-        timestamp = toUTCTime(dateStr)
-        latLon = [float(lineArr[3]), float(lineArr[4])]
-        temparr.append([latLon, timestamp])
-    arr.append(temparr)
+        urlArr.append(lineArr)
 
-#Writes the proper displacement, distance, and time for each float into an string and creates an array of the strings for all floats
-k=0
-strArr = []
-for item in arr:
-    print(floats[k])
-    #Find and write the data for each individual float
-    indArr = []
-    currDistance = 0
-    currTime = 0
-    legDistance = 0
-    legTime = 0
-    for j in range(len(item)):
-        if(j!=0):
-            legDistance = getDisplacement(item[j-1][0], item[j][0])
-            legTime = round((item[j][1]-item[j-1][1])/(60*60), 2)
-            currDistance += legDistance
+    if len(urlArr) > len(fileArr):
+        numNewLines = len(urlArr) - len(fileArr)
+        currDist = int(fileArrLines[-1][3])
+        currTime = float(fileArrLines[-1][4])
+        initLatLng = [float(urlArr[0][3]), float(urlArr[0][4])]
+
+        appendFile = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'a')
+        for index in range(-numNewLines, 0):
+            prevLatLng = [float(urlArr[index-1][3]), float(urlArr[index-1][4])]
+            latLng = [float(urlArr[index][3]), float(urlArr[index][4])]
+            totDisp = int(getDisplacement(initLatLng, latLng))
+            legDist = int(getDisplacement(prevLatLng, latLng))
+            currDist += legDist
+            legTime = round((toUTCTime('{} {}'.format(urlArr[index][1], urlArr[index][2]))
+                             - toUTCTime('{} {}'.format(urlArr[index-1][1], urlArr[index-1][2])))/(60*60), 2)
             currTime = round(currTime + legTime, 2)
-        GEBCODepth = getGEBCODepth(item[j][0])
-        indStr ="{} {} {} {} {} {}".format(int(legDistance), legTime, int(getDisplacement(item[0][0], item[j][0])), int(currDistance), currTime, GEBCODepth)
-        indArr.append(indStr)
-    with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(floats[k]), 'w') as f:
-        for line in indArr:
-            f.write(line)
-            if line!=indArr[-1]:
-                f.write('\n')
-        f.close()
-
-    #Writes the proper displacement, distance, and time for each float into an string and creates an array of the strings for all floats
-    totalDistance = 0
-    for i in range(len(item)-1):
-        totalDistance += getDisplacement(item[i][0], item[i+1][0])
-    totalTime = round((item[-1][1]-item[0][1])/(60*60), 2)
-    tempStr = "{} {} {} {} {}".format(floats[k], int(getDisplacement(item[0][0], item[-1][0])), int(totalDistance), totalTime, getGEBCODepth(item[-1][0]))
-    strArr.append(tempStr)
-    k+=1
-
-#Writes float information into a text file labelled 'distances.txt'
-with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
-    for line in strArr:
-        f.write(line)
-        if line != strArr[-1]:
-            f.write('\n')
-    f.close()
+            GEBCODepth = getGEBCODepth(latLng)
+            string = '{} {} {} {} {} {}'.format(legDist, legTime, totDisp, currDist, currTime, GEBCODepth)
+            if index != -numNewLines:
+                appendFile.write('\n')
+            appendFile.write(string)
+        appendFile.close()

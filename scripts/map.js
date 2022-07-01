@@ -312,6 +312,7 @@ async function initMap(listener) {
                         netDisplacement = data[iniIndex+i][2]/1000;
                         totalDistance = data[iniIndex+i][3]/1000;
                         totalTime = data[iniIndex+i][4];
+                        GEBCODepth = data[iniIndex+i][5];
 
                         if (totalTime === 0) {
                             avgVelocity = 0;
@@ -374,10 +375,6 @@ async function initMap(listener) {
     // for dynamic info windows
     function setInfoWindow(allPage, k, i, marker, netDisplacement, totalDistance, avgVelocity,
                            totalTime, legLength, legSpeed, legTime, GEBCODepth, EEZ, lat, lng) {
-
-        if(allPage === false){
-            makeWMSrequest(dataPoints[k]);
-        }
 
         google.maps.event.addListener(marker, 'click', function (event) {
                 // close existing windows
@@ -457,7 +454,7 @@ async function initMap(listener) {
                         '<br/><b>Distance Travelled:</b> ' + roundit(totalDistance) + ' km' +
                         '<br/><b>Average Speed:</b> ' + roundit(avgVelocity) + ' km/h' +
                         '<br/><b>Net Displacement:</b> ' + roundit(netDisplacement) + ' km' +
-                        '<br/><b>GEBCO WMS Depth:</b> ' + dataPoints[i].wmsdepth + ' m' +
+                        '<br/><b>GEBCO WMS Depth:</b> ' + GEBCODepth + ' m' +
                         '<br/><b>EEZ:</b> ' + EEZ;
 
                 }
@@ -692,7 +689,7 @@ async function initMap(listener) {
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
-            dataArr.push([parseInt(splitArr[0]), parseFloat(splitArr[1]), parseInt(splitArr[2]), parseInt(splitArr[3]), parseFloat(splitArr[4])]);
+            dataArr.push([parseInt(splitArr[0]), parseFloat(splitArr[1]), parseInt(splitArr[2]), parseInt(splitArr[3]), parseFloat(splitArr[4]), parseInt(splitArr[5])]);
         }
         return dataArr;
     }
