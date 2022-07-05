@@ -1,5 +1,8 @@
 #Last modified by Stefan Kildal-Brandt 6/28/22
 
+#This script takes a few hours to run
+#Recommended to only use to build list of float data from scratch
+
 import urllib2
 from urllib2 import HTTPError
 import math

@@ -1,4 +1,5 @@
 #Written by Stefan Kildal-Brandt on 7/1/22
+#Main Script for updating float info. Much faster than building float info files from scratch
 
 import urllib2
 from urllib2 import HTTPError
@@ -79,13 +80,18 @@ floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
 "R0072", "R0073", "R0001", "R0002", "R0003", "R0004", "R0005", "R0007",
 "N0003", "P0007", "P0034", "P0047", "R0006"]
 
+#Iterate through all of the given floats
+allInfoStrings = []
 for flo in floats:
     print(flo)
+
+    #Grab the current data that is stored for that float
     file = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
     fileArr = file.readlines()
     fileArrLines = [fileArr[i].split(' ') for i in range(len(fileArr))]
     file.close()
-
+    
+    #Grab the data that is stored on Professor Simons' SOM server for that float
     urlFile = urllib2.urlopen('https://geoweb.princeton.edu/people/simons/SOM/{}_all.txt'.format(flo))
     urlArr = []
     for line in urlFile:
@@ -95,6 +101,19 @@ for flo in floats:
             continue
         urlArr.append(lineArr)
 
+    #Calculate data for all floats
+    totDist = 0
+    for i in range(1, len(urlArr)):
+        totDist += getDisplacement([float(urlArr[i-1][3]), float(urlArr[i-1][4])], [float(urlArr[i][3]), float(urlArr[i][4])])
+    netDisp = int(getDisplacement([float(urlArr[0][3]), float(urlArr[0][4])], [float(urlArr[-1][3]), float(urlArr[-1][4])]))
+    netTime = round((toUTCTime('{} {}'.format(urlArr[-1][1], urlArr[-1][2]))
+                   - toUTCTime('{} {}'.format(urlArr[0][1], urlArr[0][2])))/(60*60), 2)
+    endDepth = getGEBCODepth([float(urlArr[-1][3]), float(urlArr[-1][4])])
+    allString = '{} {} {} {} {}'.format(flo, netDisp, int(totDist), netTime, endDepth)
+
+    allInfoStrings.append(allString)
+
+    #If there is new data on the SOM server, grab that and append it to our individual float data
     if len(urlArr) > len(fileArr):
         numNewLines = len(urlArr) - len(fileArr)
         currDist = int(fileArrLines[-1][3])
@@ -113,7 +132,15 @@ for flo in floats:
             currTime = round(currTime + legTime, 2)
             GEBCODepth = getGEBCODepth(latLng)
             string = '{} {} {} {} {} {}'.format(legDist, legTime, totDisp, currDist, currTime, GEBCODepth)
-            if index != -numNewLines:
+            if index!=-numNewLines:
                 appendFile.write('\n')
             appendFile.write(string)
         appendFile.close()
+
+#Write data in for all tab
+with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
+    for line in allInfoStrings:
+        f.write(line)
+        if line!=allInfoStrings[-1]:
+            f.write('\n')
+    f.close()

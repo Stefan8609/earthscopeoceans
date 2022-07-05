@@ -86,7 +86,7 @@ async function initMap(listener) {
         fullscreenControl: true,
         keyboardShortcuts: false,
         minZoom: 2,
-        maxZoom: 9,
+        maxZoom: 11,
         restriction: {latLngBounds: {
                     north: 85,
                     south: -85,
