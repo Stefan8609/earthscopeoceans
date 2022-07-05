@@ -1,3 +1,5 @@
+#Last modified by Stefan Kildal-Brandt on 6/28/22
+
 import urllib2 #Necessary for fetching data from marineregions server
 import json #Necessary for parsing the data into and out of Json format
 
@@ -24,10 +26,10 @@ str = json.dumps(dataObj)
 str2 = json.dumps(MRGIDList)
 
 #Write the data into files
-with open('/home/www/people/sk8609/DEVearthscopeoceans/EEZData/AllEEZ','w') as f:
+with open('/home/www/people/sk8609/DEVearthscopeoceans/data/EEZData/AllEEZ','w') as f:
 	f.write(str)
 	f.close()
 
-with open('/home/www/people/sk8609/DEVearthscopeoceans/EEZData/MRGIDList','w') as f:
+with open('/home/www/people/sk8609/DEVearthscopeoceans/data/EEZData/MRGIDList','w') as f:
 	f.write(str2)
 	f.close()
