@@ -312,6 +312,7 @@ async function initMap(listener) {
                         netDisplacement = data[iniIndex+i][2]/1000;
                         totalDistance = data[iniIndex+i][3]/1000;
                         totalTime = data[iniIndex+i][4];
+			// Fills data with depth so makeWMSrequest becomes superfluous
                         GEBCODepth = data[iniIndex+i][5];
 
                         if (totalTime === 0) {
@@ -375,7 +376,7 @@ async function initMap(listener) {
     // for dynamic info windows
     function setInfoWindow(allPage, k, i, marker, netDisplacement, totalDistance, avgVelocity,
                            totalTime, legLength, legSpeed, legTime, GEBCODepth, EEZ, lat, lng) {
-
+	// No more live requests since the data get read by grabIndData
 	// makeWMSrequest(dataPoints[k]);
 
         google.maps.event.addListener(marker, 'click', function (event) {
@@ -678,7 +679,7 @@ async function initMap(listener) {
     //Grab float data from distances.txt
     async function grabAllData(){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData("http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt", 'text');
+        let data = await fetchAndDecodeFloatData("http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/FloatInfo/distances.txt", 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
@@ -687,9 +688,10 @@ async function initMap(listener) {
         return dataArr
     }
     
+    // Gets time, distance, and depth
     async function grabIndData(Float){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData(`http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
+        let data = await fetchAndDecodeFloatData(`http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
