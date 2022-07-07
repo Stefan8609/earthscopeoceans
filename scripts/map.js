@@ -229,7 +229,7 @@ async function initMap(listener) {
             let EEZ;
             let GEBCODepth;
             let marker;
-	
+    
             // iterate over arrays, placing markers
             let k = 0; //k value labels floats in cases where some are turned off in legend (fixes problems with arrow keys on map)
             let initial=0;
@@ -293,7 +293,7 @@ async function initMap(listener) {
                         marker.setIcon(icons.sustech.icon);
                         // Princeton MERMAIDs
                     } else if (dataPoints[i].owner === "princeton") {
-			            marker.setIcon(icons.princeton.icon);
+                        marker.setIcon(icons.princeton.icon);
                        // Stanford MERMAIDs
                     } else if (dataPoints[i].owner === "stanford") {
                         marker.setIcon(icons.stanford.icon);
@@ -312,7 +312,7 @@ async function initMap(listener) {
                         netDisplacement = data[iniIndex+i][2]/1000;
                         totalDistance = data[iniIndex+i][3]/1000;
                         totalTime = data[iniIndex+i][4];
-			// Fills data with depth so makeWMSrequest becomes superfluous
+            // Fills data with depth so makeWMSrequest becomes superfluous
                         GEBCODepth = data[iniIndex+i][5];
 
                         if (totalTime === 0) {
@@ -376,8 +376,8 @@ async function initMap(listener) {
     // for dynamic info windows
     function setInfoWindow(allPage, k, i, marker, netDisplacement, totalDistance, avgVelocity,
                            totalTime, legLength, legSpeed, legTime, GEBCODepth, EEZ, lat, lng) {
-	// No more live requests since the data get read by grabIndData
-	// makeWMSrequest(dataPoints[k]);
+    // No more live requests since the data get read by grabIndData
+    // makeWMSrequest(dataPoints[k]);
 
         google.maps.event.addListener(marker, 'click', function (event) {
                 // close existing windows
@@ -414,24 +414,24 @@ async function initMap(listener) {
 
                 if (allPage === true) {
                     // content for float data tab
-                   floatTabContent = '<div id="tabContent">' +
- 			// '<b>Float Name:</b> ' + dataPoints[i].name +
-			// '<br/> ' +
-			'<b>UTC:</b> ' + dataPoints[i].stdt +
-			// '<br/><b>Your Date:</b> ' + dataPoints[i].loct +
-			'<br/><b>GPS Lat/Lon:</b> ' + dataPoints[i].stla + ', ' + dataPoints[i].stlo +
-			'<br/><b>GPS Hdop/Vdop:</b> ' + dataPoints[i].hdop + ' m , ' + dataPoints[i].vdop + ' m' +
-			'<br/><b>GEBCO WMS Depth:</b> ' + GEBCODepth + ' m' +
-			'<br/><b>EEZ:</b> ' + EEZ +
-			'<br/> ' +
-			'<br/><b>Battery:</b> ' + dataPoints[i].Vbat + ' mV' +
-			'<br/><b>Internal Pressure:</b> ' + dataPoints[i].Pint + ' Pa' +
-			'<br/><b>External Pressure:</b> ' + dataPoints[i].Pext + ' mbar' +
-			'<br/> ' +
-			'<br/><b>Total Time:</b> ' + roundit(totalTime,0) + ' h' +
-			'<br/><b>Distance Travelled:</b> ' + roundit(totalDistance,0) + ' km' +
-			'<br/><b>Average Speed:</b> ' + roundit(avgVelocity,3) + ' km/h' +
-			'<br/><b>Net Displacement:</b> ' + roundit(netDisplacement,0) + ' km';
+                    floatTabContent = '<div id="tabContent">' +
+                        // '<b>Float Name:</b> ' + dataPoints[i].name +
+                        // '<br/> ' +
+                        '<b>UTC:</b> ' + dataPoints[i].stdt +
+                        // '<br/><b>Your Date:</b> ' + dataPoints[i].loct +
+                        '<br/><b>GPS Lat/Lon:</b> ' + dataPoints[i].stla + ', ' + dataPoints[i].stlo +
+                        '<br/><b>GPS Hdop/Vdop:</b> ' + dataPoints[i].hdop + ' m , ' + dataPoints[i].vdop + ' m' +
+                        '<br/><b>GEBCO WMS Depth:</b> ' + GEBCODepth + ' m' +
+                        '<br/><b>EEZ:</b> ' + EEZ +
+                        '<br/> ' +
+                        '<br/><b>Battery:</b> ' + dataPoints[i].Vbat + ' mV' +
+                        '<br/><b>Internal Pressure:</b> ' + dataPoints[i].Pint + ' Pa' +
+                        '<br/><b>External Pressure:</b> ' + dataPoints[i].Pext + ' mbar' +
+                        '<br/> ' +
+                        '<br/><b>Total Time:</b> ' + roundit(totalTime,0) + ' h' +
+                        '<br/><b>Distance Travelled:</b> ' + roundit(totalDistance,0) + ' km' +
+                        '<br/><b>Average Speed:</b> ' + roundit(avgVelocity,3) + ' km/h' +
+                        '<br/><b>Net Displacement:</b> ' + roundit(netDisplacement,0) + ' km';
                 } else if (allPage === 'drop'){
                     // content for dropped marker tab
                     floatTabContent = '<div id="tabContent">' +
@@ -440,31 +440,31 @@ async function initMap(listener) {
                         '<br/><b>EEZ:</b> ' + EEZ;
                 } else {
                     // content for float data tab
-		    floatTabContent = '<div id="tabContent">' +
-			// '<b>Float Name:</b> ' + dataPoints[i].name +
-			// '<br/> ' +
-			'<b>UTC:</b> ' + dataPoints[i].stdt +
-			// '<br/><b>Your Date:</b> ' + dataPoints[i].loct +
-			'<br/><b>GPS Lat/Lon:</b> ' + dataPoints[i].stla + ', ' + dataPoints[i].stlo +
-			// '<br/><b>GPS Hdop/Vdop:</b> ' + dataPoints[i].hdop + ' m , ' + dataPoints[i].vdop + ' m' +
-			'<br/><b>GEBCO WMS Depth:</b> ' + dataPoints[i].wmsdepth + ' m' +
-			'<br/><b>EEZ:</b> ' + EEZ +
-			// '<br/> ' +
-			// '<br/><b>Battery:</b> ' + dataPoints[i].Vbat + ' mV' +
-			// '<br/><b>Internal Pressure:</b> ' + dataPoints[i].Pint + ' Pa' +
-			// '<br/><b>External Pressure:</b> ' + dataPoints[i].Pext + ' mbar' +
-			'<br/> ' +
-			'<br/><b>Leg Length:</b> ' + roundit(legLength,1) + ' km' +
-			'<br/><b>Leg Time:</b> ' + roundit(legTime,2) + ' h' +
-			'<br/><b>Leg Speed:</b> ' + roundit(legSpeed,3) + ' km/h' +
-			'<br/> ' +
-			'<br/><b>Total Time:</b> ' + roundit(totalTime,0) + ' h' +
-			'<br/><b>Distance Travelled:</b> ' + roundit(totalDistance,0) + ' km' +
-			'<br/><b>Average Speed:</b> ' + roundit(avgVelocity,3) + ' km/h' +
-			'<br/><b>Net Displacement:</b> ' + roundit(netDisplacement,0) + ' km';
-		}
-		// content for earthquake tabs
-		let earthquakeTabContent = '<div id="tabContent">' +
+                    floatTabContent = '<div id="tabContent">' +
+                        // '<b>Float Name:</b> ' + dataPoints[i].name +
+                        // '<br/> ' +
+                        '<b>UTC:</b> ' + dataPoints[i].stdt +
+                        // '<br/><b>Your Date:</b> ' + dataPoints[i].loct +
+                        '<br/><b>GPS Lat/Lon:</b> ' + dataPoints[i].stla + ', ' + dataPoints[i].stlo +
+                        // '<br/><b>GPS Hdop/Vdop:</b> ' + dataPoints[i].hdop + ' m , ' + dataPoints[i].vdop + ' m' +
+                        '<br/><b>GEBCO WMS Depth:</b> ' + GEBCODepth + ' m' +
+                        '<br/><b>EEZ:</b> ' + EEZ +
+                        // '<br/> ' +
+                        // '<br/><b>Battery:</b> ' + dataPoints[i].Vbat + ' mV' +
+                        // '<br/><b>Internal Pressure:</b> ' + dataPoints[i].Pint + ' Pa' +
+                        // '<br/><b>External Pressure:</b> ' + dataPoints[i].Pext + ' mbar' +
+                        '<br/> ' +
+                        '<br/><b>Leg Length:</b> ' + roundit(legLength,1) + ' km' +
+                        '<br/><b>Leg Time:</b> ' + roundit(legTime,2) + ' h' +
+                        '<br/><b>Leg Speed:</b> ' + roundit(legSpeed,3) + ' km/h' +
+                        '<br/> ' +
+                        '<br/><b>Total Time:</b> ' + roundit(totalTime,0) + ' h' +
+                        '<br/><b>Distance Travelled:</b> ' + roundit(totalDistance,0) + ' km' +
+                        '<br/><b>Average Speed:</b> ' + roundit(avgVelocity,3) + ' km/h' +
+                        '<br/><b>Net Displacement:</b> ' + roundit(netDisplacement,0) + ' km';
+                }
+                // content for earthquake tabs
+                let earthquakeTabContent = '<div id="tabContent">' +
                     '<b>Code:</b> ' + "/* filler */" +
                     '<br/><b>UTC:</b> ' + "/* filler */" +
                     '<br/><b>Your Date:</b> ' + "/* filler */" +
@@ -472,9 +472,13 @@ async function initMap(listener) {
                     '<br/><b>Magnitude:</b> ' + "/* filler */" +
                     '<br/><b>Great Circle Distance:</b> ' + "/* filler */" +
                     '<br/><b>Source:</b> ' + "/* filler */";
-
-		let floatName = '<div id="tabNames">' + '<b>' + dataPoints[i].name + '</b> ';
-
+                
+                let floatName;
+                if(allPage === 'drop'){
+                    floatName = '<div id="tabNames">' + '<b>' + 'Drop Pin' + '</b> ';
+                } else {
+                    floatName = '<div id="tabNames">' + '<b>' + dataPoints[i].name + '</b> ';
+                }
                 let earthquakeName = '<div id="tabNames">' + '<b>EarthQuake Info</b> ';
 
                 let seismograms = '<div id="tabNames">' + '<b>Seismograms</b> ';
@@ -501,10 +505,10 @@ async function initMap(listener) {
 
     // close ALL info windows (stuff could have been left hanging if you click too quickly)
     function closeIWindows() {
-	for (let i = 0; i < iwindows.length; i++) {
-	    iwindows[i].close();
-	}
-	iwindows = [];
+    for (let i = 0; i < iwindows.length; i++) {
+        iwindows[i].close();
+    }
+    iwindows = [];
     }
 
     // handles async use of data
@@ -530,13 +534,13 @@ async function initMap(listener) {
     //  We used to  make individual buttons like this
     // // clear
     // google.maps.event.addDomListener(clear, 'click', function() {
-    // 	clearMarkers();
+    //  clearMarkers();
     //     });
     // google.maps.event.addDomListener(all, 'click', function() {
-    // 	getFloatData("all");
+    //  getFloatData("all");
     //     });
     // google.maps.event.addDomListener(P006, 'click', function() {
-    // 	getFloatData("P006");
+    //  getFloatData("P006");
     //     });
     // and then one for every explicit number, but now that is all replaced by:
 
@@ -575,8 +579,8 @@ async function initMap(listener) {
         }
         // sac event
         // google.maps.event.addDomListener(plot, 'click', function() {
-        // 	let url = "http://geoweb.princeton.edu/people/jnrubin/DEVearthscopeoceans/testSAC2.SAC";
-        // 	    useBinCallback(url);
+        //  let url = "http://geoweb.princeton.edu/people/jnrubin/DEVearthscopeoceans/testSAC2.SAC";
+        //      useBinCallback(url);
         //     });
 
         // clear event
