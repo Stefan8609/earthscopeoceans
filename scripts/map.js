@@ -614,6 +614,7 @@ async function initMap(listener) {
         google.maps.event.addDomListener(drop, 'click', async function() {
                 clearMarkers();
                 document.getElementById('toggle').setAttribute('class','toggle-hidden');
+                slideShowOn = false;
                 map.setZoom(2);
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
