@@ -312,7 +312,7 @@ async function initMap(listener) {
                         netDisplacement = data[iniIndex+i][2]/1000;
                         totalDistance = data[iniIndex+i][3]/1000;
                         totalTime = data[iniIndex+i][4];
-            // Fills data with depth so makeWMSrequest becomes superfluous
+                        // Fills data with depth so makeWMSrequest becomes superfluous
                         GEBCODepth = data[iniIndex+i][5];
 
                         if (totalTime === 0) {
@@ -376,8 +376,8 @@ async function initMap(listener) {
     // for dynamic info windows
     function setInfoWindow(allPage, k, i, marker, netDisplacement, totalDistance, avgVelocity,
                            totalTime, legLength, legSpeed, legTime, GEBCODepth, EEZ, lat, lng) {
-    // No more live requests since the data get read by grabIndData
-    // makeWMSrequest(dataPoints[k]);
+        // No more live requests since the data get read by grabIndData
+        // makeWMSrequest(dataPoints[k]);
 
         google.maps.event.addListener(marker, 'click', function (event) {
                 // close existing windows
