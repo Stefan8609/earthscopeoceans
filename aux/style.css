@@ -148,6 +148,15 @@ div.scrollmenu a:hover {
 #toggle img {
     vertical-align: middle;
 }
+
+.toggle-hidden {
+    visibility: hidden;
+}
+
+.toggle-visible {
+    visibility: visible;
+}
+
 /*info window text*/
 #tabContent {
     font-size: 1.3em;

@@ -117,6 +117,7 @@ async function initMap(listener) {
     }
 
     var toggle = document.getElementById('toggle');
+    document.getElementById('toggle').setAttribute('class', 'toggle-hidden')
     var div2 = document.createElement('div');
     var toggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
     var revToggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png"
@@ -447,8 +448,8 @@ async function initMap(listener) {
                         // '<br/><b>Your Date:</b> ' + dataPoints[i].loct +
                         '<br/><b>GPS Lat/Lon:</b> ' + dataPoints[i].stla + ', ' + dataPoints[i].stlo +
                         // '<br/><b>GPS Hdop/Vdop:</b> ' + dataPoints[i].hdop + ' m , ' + dataPoints[i].vdop + ' m' +
-			// We're not making a WMS request here so no more datapoint and now more that field
-			// '<br/><b>GEBCO WMS Depth:</b> ' + dataPoints[i].wmsdepth + ' m' +
+                        // We're not making a WMS request here so no more datapoint and now more that field
+                        // '<br/><b>GEBCO WMS Depth:</b> ' + dataPoints[i].wmsdepth + ' m' +
                         '<br/><b>GEBCO WMS Depth:</b> ' + GEBCODepth + ' m' +
                         '<br/><b>EEZ:</b> ' + EEZ +
                         // '<br/> ' +
@@ -568,6 +569,11 @@ async function initMap(listener) {
                         if (referer !== "slideShow") {
                             slideShowOn = false;
                         }
+                        if (id==='all') {
+                            document.getElementById('toggle').setAttribute('class','toggle-hidden');
+                        } else {
+                            document.getElementById('toggle').setAttribute('class','toggle-visible');
+                        }
                         if (dropListener) {
                              google.maps.event.removeListener(dropListener);
                         }
@@ -590,6 +596,7 @@ async function initMap(listener) {
         // clear event
         google.maps.event.addDomListener(clear, 'click', function () {
                 clearMarkers();
+                document.getElementById('toggle').setAttribute('class','toggle-hidden');
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
@@ -606,6 +613,7 @@ async function initMap(listener) {
         // drop marker event
         google.maps.event.addDomListener(drop, 'click', async function() {
                 clearMarkers();
+                document.getElementById('toggle').setAttribute('class','toggle-hidden');
                 map.setZoom(2);
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
@@ -687,7 +695,7 @@ async function initMap(listener) {
     //Grab float data from distances.txt
     async function grabAllData(){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData("http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/FloatInfo/distances.txt", 'text');
+        let data = await fetchAndDecodeFloatData("http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt", 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
@@ -699,7 +707,7 @@ async function initMap(listener) {
     // Gets time, distance, and depth
     async function grabIndData(Float){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData(`http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
+        let data = await fetchAndDecodeFloatData(`http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
