@@ -117,13 +117,18 @@ async function initMap(listener) {
     }
 
     var toggle = document.getElementById('toggle');
-    document.getElementById('toggle').setAttribute('class', 'toggle-hidden')
-    var div2 = document.createElement('div');
+    toggle.setAttribute('class', 'toggle-hidden');
     var toggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
-    var revToggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png"
+    var revToggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png";
+    var div2 = document.createElement('div');
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
+    let dropButton = document.getElementById('drop-button');
+    dropButton.setAttribute('class', 'toggle-visible');
+    let dropButtonSrc = "http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
+    let div3 = document.createElement('div');
+    div3.innerHTML = '<img src="' + dropButtonSrc + '" id="' + 'drop-button-div' + '">';
 
-    google.maps.event.addDomListener(document.getElementById('toggle'), 'click', function () {
+    google.maps.event.addDomListener(toggle, 'click', function () {
             if (dropListener){
                 google.maps.event.removeListener(dropListener);
             }
@@ -139,16 +144,43 @@ async function initMap(listener) {
             else {
                 document.getElementById('toggleButton').src=toggleSrc
             }
-            console.log("show all: " + showAll);
 
             // convert id then use
             handlePlotRequest(currFloat);
         });
+    
+    google.maps.event.addDomListener(dropButton, 'click', function (dropEvent) {
+            if(dropListener) {
+                google.maps.event.removeListener(dropListener);
+            }
+            dropListener = google.maps.event.addDomListener(map, 'click', async function(dropEvent) {
+                    //Add a marker based on where map is clicked
+                    marker = new google.maps.Marker({
+                            position: dropEvent.latLng,
+                            map: map,
+                            clickable: true,
+                            icon: icons.dead.icon,
+                        });
+                    let lat = dropEvent.latLng.toJSON().lat.toFixed(6);
+                    let lng = dropEvent.latLng.toJSON().lng.toFixed(6);
+                    EEZ = await eezFinder(lat, lng, EEZList, AllGeometries);
+                    GEBCODepth = await makeWMSrequestCoords(lat, lng);
+                    markers.push(marker);
+                    //Sets an info marker for the map
+                    setInfoWindow('drop', 0, 0, marker, 0, 0, 0, 0, 0, 0, 0, GEBCODepth, EEZ, lat, lng);
+                    google.maps.event.trigger(marker, 'click');
+                    google.maps.event.removeListener(dropListener);
+                });
+
+        });
 
     toggle.appendChild(div2);
+    dropButton.appendChild(div3);
 
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+    map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(dropButton);
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(toggle);
+   // map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(dropButton);
 
     handlePlotRequest("all");
 
@@ -369,7 +401,6 @@ async function initMap(listener) {
     function handlePlotRequest(name) {
         currFloat = name;
         getFloatData(name).then((value) => {
-                console.log(value);
                 addToMap(value, name);
         });
     }
@@ -570,10 +601,11 @@ async function initMap(listener) {
                             slideShowOn = false;
                         }
                         if (id==='all') {
-                            document.getElementById('toggle').setAttribute('class','toggle-hidden');
+                            toggle.setAttribute('class', 'toggle-hidden');
                         } else {
-                            document.getElementById('toggle').setAttribute('class','toggle-visible');
+                            toggle.setAttribute('class', 'toggle-visible');
                         }
+                        dropButton.setAttribute('class', 'toggle-visible');
                         if (dropListener) {
                              google.maps.event.removeListener(dropListener);
                         }
@@ -596,7 +628,7 @@ async function initMap(listener) {
         // clear event
         google.maps.event.addDomListener(clear, 'click', function () {
                 clearMarkers();
-                document.getElementById('toggle').setAttribute('class','toggle-hidden');
+                toggle.setAttribute('class','toggle-hidden');
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
@@ -608,12 +640,14 @@ async function initMap(listener) {
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
+                dropButton.setAttribute('class', 'toggle-visible')
                 slideShow();
             });
         // drop marker event
         google.maps.event.addDomListener(drop, 'click', async function() {
                 clearMarkers();
-                document.getElementById('toggle').setAttribute('class','toggle-hidden');
+                toggle.setAttribute('class','toggle-hidden');
+                dropButton.setAttribute('class', 'toggle-hidden');
                 slideShowOn = false;
                 map.setZoom(2);
                 if (dropListener) {

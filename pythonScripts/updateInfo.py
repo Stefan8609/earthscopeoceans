@@ -68,6 +68,10 @@ def getGEBCODepth(latlon):
         return data.split("\'")[7]
     except HTTPError as err:
         print(err)
+        return 0
+    except Exception as err:
+        print(err)
+        return 0
 
 #List of all floats at time of this scripts creation
 floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
