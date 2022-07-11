@@ -35,9 +35,9 @@ async function initMap(listener) {
     };
 
     //Initializing list of All EEZ and their coordinates
-    let EEZList = await fetchAndDecodeFloatData('http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllEEZ','text');
+    let EEZList = await fetchAndDecodeFloatData('https://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllEEZ','text');
     EEZList = JSON.parse(EEZList);
-    let AllGeometries = await fetchAndDecodeFloatData('http://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllGeometries','text');
+    let AllGeometries = await fetchAndDecodeFloatData('https://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllGeometries','text');
     AllGeometries = JSON.parse(AllGeometries);
 
     // some default locations
@@ -45,7 +45,7 @@ async function initMap(listener) {
     let papeete = { lat: -17.53733, lng: -149.5665 };
 
     // set up icons
-    let iconBase = 'http://maps.google.com/mapfiles/ms/icons/';
+    let iconBase = 'https://maps.google.com/mapfiles/ms/icons/';
     let icons = {
         geoazur: {
             name: 'Géoazur',
@@ -118,13 +118,13 @@ async function initMap(listener) {
 
     var toggle = document.getElementById('toggle');
     toggle.setAttribute('class', 'toggle-hidden');
-    var toggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
-    var revToggleSrc = "http://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png";
+    var toggleSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
+    var revToggleSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png";
     var div2 = document.createElement('div');
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
     let dropButton = document.getElementById('drop-button');
     dropButton.setAttribute('class', 'toggle-visible');
-    let dropButtonSrc = "http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
+    let dropButtonSrc = "https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
     let div3 = document.createElement('div');
     div3.innerHTML = '<img src="' + dropButtonSrc + '" id="' + 'drop-button-div' + '">';
 
@@ -553,9 +553,9 @@ async function initMap(listener) {
 
         let url;
         if (name === "all") {
-            url = "http://geoweb.princeton.edu/people/simons/SOM/all.txt";
+            url = "https://geoweb.princeton.edu/people/simons/SOM/all.txt";
         } else {
-            url = "http://geoweb.princeton.edu/people/simons/SOM/" + name + showTail;
+            url = "https://geoweb.princeton.edu/people/simons/SOM/" + name + showTail;
         }
 
         let dataPromise = fetchAndDecodeFloatData(url, 'text');
@@ -621,7 +621,7 @@ async function initMap(listener) {
         }
         // sac event
         // google.maps.event.addDomListener(plot, 'click', function() {
-        //  let url = "http://geoweb.princeton.edu/people/jnrubin/DEVearthscopeoceans/testSAC2.SAC";
+        //  let url = "https://geoweb.princeton.edu/people/jnrubin/DEVearthscopeoceans/testSAC2.SAC";
         //      useBinCallback(url);
         //     });
 
@@ -730,7 +730,7 @@ async function initMap(listener) {
     //Grab float data from distances.txt
     async function grabAllData(){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData("http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt", 'text');
+        let data = await fetchAndDecodeFloatData("https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt", 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
@@ -742,7 +742,7 @@ async function initMap(listener) {
     // Gets time, distance, and depth
     async function grabIndData(Float){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData(`http://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
+        let data = await fetchAndDecodeFloatData(`https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
