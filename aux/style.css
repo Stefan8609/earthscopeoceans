@@ -326,7 +326,7 @@ div.scrollmenu a:hover {
 .copyright-jumbotron {
     margin-top: 25px;
     line-height: 10px;
-    font-size: calc(1vw + 6px);
+    font-size: calc(1vw + 5px);
 
     text-align: center;
     height: 20px;
