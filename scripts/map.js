@@ -611,11 +611,18 @@ async function initMap(listener) {
                             slideShowOn = false;
                         }
                         if (id==='all') {
+                            //Toggles visibility of buttons
                             toggle.setAttribute('class', 'button-hidden');
                             legend.setAttribute('class','button-visible');
                         } else {
+                            //Toggles visibility of buttons
                             toggle.setAttribute('class', 'button-visible');
                             legend.setAttribute('class','button-hidden');
+
+                            //Turn legend on for this float
+                            showDict[getOwner(id)]=true;
+                            document.getElementById(icons[getOwner(id)].name).src=icons[getOwner(id)].icon;
+
                         }
                         dropButton.setAttribute('class', 'button-visible');
                         if (dropListener) {
