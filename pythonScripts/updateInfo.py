@@ -122,7 +122,6 @@ for flo in floats:
     allString = '{} {} {} {} {}'.format(flo, netDisp, int(totDist), netTime, endDepth)
 
     allInfoStrings.append(allString)
-
     #If there is new data on the SOM server, grab that and append it to our individual float data
     if len(urlArr) > len(fileArr):
         numNewLines = len(urlArr) - len(fileArr)
@@ -142,7 +141,8 @@ for flo in floats:
             currTime = round(currTime + legTime, 2)
             GEBCODepth = getGEBCODepth(latLng)
             string = '{} {} {} {} {} {}'.format(legDist, legTime, totDisp, currDist, currTime, GEBCODepth)
-            appendFile.write('\n')
+            if not(index==-numNewLines and '\n' in fileArr[-1]):
+                appendFile.write('\n')
             appendFile.write(string)
         appendFile.close()
 
