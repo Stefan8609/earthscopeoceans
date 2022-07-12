@@ -104,30 +104,34 @@ async function initMap(listener) {
 
     // legend generation
     var legend = document.getElementById('legend');
+    legend.setAttribute('class','button-visible');
     for (var key in icons) {
         var type = icons[key];
         var name = type.name;
         var icon = type.icon;
         var div = document.createElement('div');
-        div.innerHTML = '<img src="' + icon + '" id="' + name + '">' + type.name;
+        div.innerHTML = '<img src="' + icon + '" id="' + name + '" style=cursor:pointer;">' + type.name;
 
         legend.appendChild(div);
 
         legendClosure(name, key);
     }
-
+    
+    //Creates toggle button and drop pin button and configures their html/css
     var toggle = document.getElementById('toggle');
-    toggle.setAttribute('class', 'toggle-hidden');
+    toggle.setAttribute('class', 'button-hidden');
     var toggleSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/history.png";
     var revToggleSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png";
     var div2 = document.createElement('div');
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
+
     let dropButton = document.getElementById('drop-button');
-    dropButton.setAttribute('class', 'toggle-visible');
+    dropButton.setAttribute('class', 'button-visible');
     let dropButtonSrc = "https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
     let div3 = document.createElement('div');
     div3.innerHTML = '<img src="' + dropButtonSrc + '" id="' + 'drop-button-div' + '">';
-
+    
+    //Adds functionality to the toggle button
     google.maps.event.addDomListener(toggle, 'click', function () {
             if (dropListener){
                 google.maps.event.removeListener(dropListener);
@@ -148,7 +152,8 @@ async function initMap(listener) {
             // convert id then use
             handlePlotRequest(currFloat);
         });
-    
+
+    //Adds functionality to the drop pin button
     google.maps.event.addDomListener(dropButton, 'click', function (dropEvent) {
             if(dropListener) {
                 google.maps.event.removeListener(dropListener);
@@ -176,11 +181,11 @@ async function initMap(listener) {
 
     toggle.appendChild(div2);
     dropButton.appendChild(div3);
-
+    
+    //Places the buttons in their respective quadrants of the map
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(dropButton);
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(toggle);
-   // map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(dropButton);
 
     handlePlotRequest("all");
 
@@ -197,6 +202,11 @@ async function initMap(listener) {
         google.maps.event.addDomListener(document.getElementById(name), 'click', function () {
             // the real legend toggling
             showDict[key] = !showDict[key];
+            if (showDict[key]!=true) {
+                document.getElementById(name).src="https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png";
+            } else {
+                document.getElementById(name).src=icons[key].icon;
+            }
             handlePlotRequest("all");
         });
     }
@@ -601,11 +611,13 @@ async function initMap(listener) {
                             slideShowOn = false;
                         }
                         if (id==='all') {
-                            toggle.setAttribute('class', 'toggle-hidden');
+                            toggle.setAttribute('class', 'button-hidden');
+                            legend.setAttribute('class','button-visible');
                         } else {
-                            toggle.setAttribute('class', 'toggle-visible');
+                            toggle.setAttribute('class', 'button-visible');
+                            legend.setAttribute('class','button-hidden');
                         }
-                        dropButton.setAttribute('class', 'toggle-visible');
+                        dropButton.setAttribute('class', 'button-visible');
                         if (dropListener) {
                              google.maps.event.removeListener(dropListener);
                         }
@@ -628,7 +640,8 @@ async function initMap(listener) {
         // clear event
         google.maps.event.addDomListener(clear, 'click', function () {
                 clearMarkers();
-                toggle.setAttribute('class','toggle-hidden');
+                toggle.setAttribute('class','button-hidden');
+                legend.setAttribute('class','button-hidden');
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
@@ -640,14 +653,16 @@ async function initMap(listener) {
                 if (dropListener) {
                     google.maps.event.removeListener(dropListener);
                 }
-                dropButton.setAttribute('class', 'toggle-visible')
+                legend.setAttribute('class','button-visible');
+                dropButton.setAttribute('class', 'button-visible')
                 slideShow();
             });
         // drop marker event
         google.maps.event.addDomListener(drop, 'click', async function() {
                 clearMarkers();
-                toggle.setAttribute('class','toggle-hidden');
-                dropButton.setAttribute('class', 'toggle-hidden');
+                toggle.setAttribute('class','button-hidden');
+                dropButton.setAttribute('class', 'button-hidden');
+                legend.setAttribute('class','button-hidden');
                 slideShowOn = false;
                 map.setZoom(2);
                 if (dropListener) {
@@ -711,9 +726,10 @@ async function initMap(listener) {
     async function slideShow() {
         if (slideShowOn === false) {
             slideShowOn = true;
+            const tempDict = {...showDict};
             for (let i = 1; i < floatIDS.length; i++) {
 
-                if (slideShowOn === true && showDict[getOwner(floatIDS[i])] === true) {
+                if (slideShowOn === true && tempDict[getOwner(floatIDS[i])] === true) {
                     let referer = "slideShow";
                     google.maps.event.trigger(document.getElementById(floatIDS[i]), 'click', referer);
                     await sleep(slideShowInterval);
