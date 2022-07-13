@@ -12,7 +12,7 @@ async function initMap(listener) {
 
     // set up slideshow
     let slideShowOn = false;
-    const slideShowInterval = 3000;
+    const slideShowInterval = 6000;
 
     // keep track of markers and their info windows
     const numFloats = 54;
@@ -116,7 +116,7 @@ async function initMap(listener) {
 
         legendClosure(name, key);
     }
-    
+
     //Creates toggle button and drop pin button and configures their html/css
     var toggle = document.getElementById('toggle');
     toggle.setAttribute('class', 'button-hidden');
@@ -124,13 +124,12 @@ async function initMap(listener) {
     var revToggleSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/future.png";
     var div2 = document.createElement('div');
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
-
     let dropButton = document.getElementById('drop-button');
     dropButton.setAttribute('class', 'button-visible');
     let dropButtonSrc = "https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
     let div3 = document.createElement('div');
     div3.innerHTML = '<img src="' + dropButtonSrc + '" id="' + 'drop-button-div' + '">';
-    
+
     //Adds functionality to the toggle button
     google.maps.event.addDomListener(toggle, 'click', function () {
             if (dropListener){
@@ -152,7 +151,7 @@ async function initMap(listener) {
             // convert id then use
             handlePlotRequest(currFloat);
         });
-
+    
     //Adds functionality to the drop pin button
     google.maps.event.addDomListener(dropButton, 'click', function (dropEvent) {
             if(dropListener) {
@@ -181,7 +180,7 @@ async function initMap(listener) {
 
     toggle.appendChild(div2);
     dropButton.appendChild(div3);
-    
+
     //Places the buttons in their respective quadrants of the map
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
     map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(dropButton);
@@ -618,11 +617,9 @@ async function initMap(listener) {
                             //Toggles visibility of buttons
                             toggle.setAttribute('class', 'button-visible');
                             legend.setAttribute('class','button-hidden');
-
                             //Turn legend on for this float
                             showDict[getOwner(id)]=true;
                             document.getElementById(icons[getOwner(id)].name).src=icons[getOwner(id)].icon;
-
                         }
                         dropButton.setAttribute('class', 'button-visible');
                         if (dropListener) {
