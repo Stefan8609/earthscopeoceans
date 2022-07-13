@@ -427,7 +427,9 @@ async function initMap(listener) {
         google.maps.event.addListener(marker, 'click', function (event) {
                 // close existing windows
                 closeIWindows();
-                markerIndex = k;
+                if (allPage!=='drop'){
+                    markerIndex = k;
+                }
 
                 //Redeclare variables for jQuery (it doesn't work if I don't do this, I have no idea why)
                 dropMarkerList = dropMarkers;
@@ -744,29 +746,40 @@ async function initMap(listener) {
     google.maps.event.addDomListener(document, 'keyup', function (e) {
             let code = (e.keyCode ? e.keyCode : e.which);
             if (markerIndex !== -1) {
-                if (markerIndex > markers.length - 1){
+                if (markerIndex > markers.length + dropMarkers.length - 1){
                     markerIndex=0
                 }
                 if (code === 39) {
-                    if (markerIndex === markers.length - 1) {
+                    if (markerIndex >= markers.length + dropMarkers.length - 1) {
                         markerIndex = 0;
                     } else {
                         markerIndex++;
                     }
-                    google.maps.event.trigger(markers[markerIndex], 'click');
+
+                    if(markerIndex < markers.length) {
+                        google.maps.event.trigger(markers[markerIndex], 'click');
+                    } else {
+                        google.maps.event.trigger(dropMarkers[markerIndex - markers.length], 'click');
+                    }
 
                 } else if (code === 37) {
                     if (markerIndex === 0) {
-                        markerIndex = markers.length - 1
+                        markerIndex = markers.length + dropMarkers.length - 1;
                     } else {
                         markerIndex--;
                     }
-                    google.maps.event.trigger(markers[markerIndex], 'click');
+
+                    if(markerIndex < markers.length) {
+                        google.maps.event.trigger(markers[markerIndex], 'click');
+                    } else {
+                        google.maps.event.trigger(dropMarkers[markerIndex - markers.length], 'click');
+                    }
 
                 } else if (code === 27) {
                     closeIWindows();
                 }
             }
+            console.log(markerIndex);
         });
 
     function sleep(ms) {
