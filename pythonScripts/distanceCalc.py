@@ -86,7 +86,7 @@ floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
 "R0072", "R0073", "R0001", "R0002", "R0003", "R0004", "R0005", "R0007",
 "N0003", "P0007", "P0034", "P0047", "R0006"]
 
-#Script to grab and decode float data from Professor Simon's pages
+#Script to grab and decode float data from Professor Simons' pages
 arr = []
 for i in floats:
     url = "https://geoweb.princeton.edu/people/simons/SOM/{}_all.txt".format(i)
