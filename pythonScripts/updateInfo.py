@@ -1,4 +1,5 @@
-#Written by Stefan Kildal-Brandt on 7/1/22
+#Written by Stefan Kildal-Brandt on 7/1/2022
+# Last update by Frederik J Simons on 1/7/2024
 #Main Script for updating float info. Much faster than building float info files from scratch
 
 import urllib2

@@ -103,7 +103,8 @@ for i in floats:
         temparr.append([latLon, timestamp])
     arr.append(temparr)
 
-#Writes the proper displacement, distance, and time for each float into an string and creates an array of the strings for all floats
+#Writes the proper displacement, distance, and time for each float
+#into a string and creates an array of the strings for all floats
 k=0
 strArr = []
 for item in arr:
@@ -130,7 +131,8 @@ for item in arr:
                 f.write('\n')
         f.close()
 
-    #Writes the proper displacement, distance, and time for each float into an string and creates an array of the strings for all floats
+    #Writes the proper displacement, distance, and time for each float
+    #into a string and creates an array of the strings for all floats
     totalDistance = 0
     for i in range(len(item)-1):
         totalDistance += getDisplacement(item[i][0], item[i+1][0])
