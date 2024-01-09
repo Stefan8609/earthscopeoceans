@@ -89,7 +89,7 @@ floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
           "P0040", "P0041", "P0042", "P0043", "P0044", "P0045", "P0046", "P0048",
           "P0049", "R0058", "R0059", "R0061", "R0063", "R0065", "R0067", "R0069",
           "R0071", "R0072", "R0073", "R0001", "R0002", "R0003", "R0004", "R0005",
-          "R0007", "N0003", "P0007", "P0034", "P0047", "R0006", "R0062"]
+          "R0007", "N0003", "P0007", "P0034", "P0047", "R0006", "R0062", "R0066"]
 
 #Iterate through all of the given floats
 allInfoStrings = []
@@ -97,7 +97,7 @@ for flo in floats:
     print(flo)
 
     #Grab the current data that is stored for that float
-    file = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
+    file = open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
     fileArr = file.readlines()
     fileArrLines = [fileArr[i].split(' ') for i in range(len(fileArr))]
     file.close()
@@ -123,6 +123,7 @@ for flo in floats:
     allString = '{} {} {} {} {}'.format(flo, netDisp, int(totDist), netTime, endDepth)
 
     allInfoStrings.append(allString)
+
     #If there is new data on the SOM server, grab that and append it to our individual float data
     if len(urlArr) > len(fileArr):
         numNewLines = len(urlArr) - len(fileArr)
@@ -130,7 +131,7 @@ for flo in floats:
         currTime = float(fileArrLines[-1][4])
         initLatLng = [float(urlArr[0][3]), float(urlArr[0][4])]
 
-        appendFile = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'a')
+        appendFile = open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'a')
         for index in range(-numNewLines, 0):
             prevLatLng = [float(urlArr[index-1][3]), float(urlArr[index-1][4])]
             latLng = [float(urlArr[index][3]), float(urlArr[index][4])]
@@ -148,7 +149,7 @@ for flo in floats:
         appendFile.close()
 
 #Write data in for all tab
-with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
+with open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
     for line in allInfoStrings:
         f.write(line)
         if line!=allInfoStrings[-1]:

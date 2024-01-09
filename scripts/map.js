@@ -1,6 +1,7 @@
 /**
 * Map class
- @author Jonah Rubin, Stefan Kildal-Brandt, and Frederik J Simons 07/06/2022
+ @author Jonah Rubin and Stefan Kildal-Brandt 07/06/2022
+ Last modified by Frederik J Simons 01/07/2024
 */
 
 async function initMap(listener) {
@@ -15,7 +16,6 @@ async function initMap(listener) {
     const slideShowInterval = 6000;
 
     // keep track of markers and their info windows
-    const numFloats = 68;
     let markers = [];
     let dropMarkers = [];
     let iwindows = [];
@@ -128,7 +128,7 @@ async function initMap(listener) {
     div2.innerHTML = '<img src="' + toggleSrc + '" id="' + 'toggleButton' + '">';
     let dropButton = document.getElementById('drop-button');
     dropButton.setAttribute('class', 'button-visible');
-    let dropButtonSrc = "https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/aux/dropper.png"
+    let dropButtonSrc = "https://geoweb.princeton.edu/people/simons/earthscopeoceans/aux/dropper.png"
     let div3 = document.createElement('div');
     div3.innerHTML = '<img src="' + dropButtonSrc + '" id="' + 'drop-button-div' + '">';
 
@@ -621,27 +621,14 @@ async function initMap(listener) {
     setUpEvents();
 
     //################################################################################//
-    //  We used to  make individual buttons like this
-    // // clear
-    // google.maps.event.addDomListener(clear, 'click', function() {
-    //  clearMarkers();
-    //     });
-    // google.maps.event.addDomListener(all, 'click', function() {
-    //  getFloatData("all");
-    //     });
-    // google.maps.event.addDomListener(P006, 'click', function() {
-    //  getFloatData("P006");
-    //     });
-    // and then one for every explicit number, but now that is all replaced by:
-
     async function setUpEvents() {
-        // make buttons dynamically - ALL numbers generated (but see below)... up to: numFloats
-        // this is the maximum. Also need to set the labels explicitly in ../index.html.
+        // Make buttons dynamically - ALL numbers generated (but see below)... 
+        // You need to set the labels explicitly in ../index.html.
         addEvents("all");
         markerIndex = 0;
         allFloats = getAllFloatNames();
 
-        // autogenerate "numFloats" events
+        // autogenerate all the events
         // if they do not exist, the button will not be created
         for (let i = 0; i <= allFloats.length; i++) {
             addEvents(allFloats[i]);
