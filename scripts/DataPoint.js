@@ -7,7 +7,7 @@ DataPoint object class
 
 const JAMSTEC_FLOATS = [
     "N0001", "N0002", "N0004", "N0005", "P0050",
-    "P0053", "P0054"
+    "P0053", "P0054", "T0100"
 ];
 const GEOAZUR_FLOATS = [
     "P0006"

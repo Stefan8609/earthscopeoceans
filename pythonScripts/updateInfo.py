@@ -80,8 +80,8 @@ def getGEBCODepth(latlon, bounds=5):
         print(err)
         return 0
 
-#List of all floats at time of this scripts creation
-floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050",
+#List of all floats
+floats = ["N0001", "N0002", "N0003", "N0004", "N0005", "P0050", "T0100",
           "P0052", "P0053", "P0054", "P0006", "P0008", "P0009", "P0010", "P0011",
           "P0012", "P0013", "P0016", "P0017", "P0018", "P0019", "P0020", "P0021",
           "P0022", "P0023", "P0024", "P0025", "P0026", "P0027", "P0028", "P0029",
