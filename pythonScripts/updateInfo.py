@@ -97,7 +97,7 @@ for flo in floats:
     print(flo)
 
     #Grab the current data that is stored for that float
-    file = open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
+    file = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'r')
     fileArr = file.readlines()
     fileArrLines = [fileArr[i].split(' ') for i in range(len(fileArr))]
     file.close()
@@ -131,7 +131,7 @@ for flo in floats:
         currTime = float(fileArrLines[-1][4])
         initLatLng = [float(urlArr[0][3]), float(urlArr[0][4])]
 
-        appendFile = open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'a')
+        appendFile = open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(flo), 'a')
         for index in range(-numNewLines, 0):
             prevLatLng = [float(urlArr[index-1][3]), float(urlArr[index-1][4])]
             latLng = [float(urlArr[index][3]), float(urlArr[index][4])]
@@ -149,7 +149,7 @@ for flo in floats:
         appendFile.close()
 
 #Write data in for all tab
-with open('/home/www/people/simons/earthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
+with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt', 'w') as f:
     for line in allInfoStrings:
         f.write(line)
         if line!=allInfoStrings[-1]:
