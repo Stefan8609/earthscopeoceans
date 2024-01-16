@@ -15,11 +15,13 @@ body  {
     margin: -100px 0 0 -100px;
 }
 
+/*images like Mediterranean2021 and metadata*/
 .carousel-container {
     width: calc(200px + 30vw);
     height: calc(-50 + 50vh);
 }
 
+/*images like Polynesia2018*/
 .carousel-wider {
     width: calc(200px + 40vw);
     height: calc(-50 + 50vh);
