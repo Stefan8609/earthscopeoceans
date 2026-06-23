@@ -22,8 +22,8 @@ function makeWMSrequest(dataPoint) {
     const rqt = 'getfeatureinfo';
 
     const rqtTail = 'request=' + rqt + '&service=wms&crs=EPSG:4326&layers=GEBCO_LATEST_2&query_layers=GEBCO_LATEST_2&BBOX='
-        + stlap + ',' + stlop + ',' + stlam + ',' + stlom + '&info_format=text/plain&service=wms&i='
-        + pxx + '&j=' + pxy + '&width=' + pxw + '&height=' + pxh + '&version=1.3.0';
+          + stlap + ',' + stlop + ',' + stlam + ',' + stlom + '&info_format=text/plain&service=wms&i='
+          + pxx + '&j=' + pxy + '&width=' + pxw + '&height=' + pxh + '&version=1.3.0';
 
     let url = rqtHead + rqtTail;
 
@@ -70,8 +70,8 @@ async function makeWMSrequestCoords(lat, lng) {
     const rqt = 'getfeatureinfo';
 
     const rqtTail = 'request=' + rqt + '&service=wms&crs=EPSG:4326&layers=GEBCO_LATEST_2&query_layers=GEBCO_LATEST_2&BBOX='
-        + stlap + ',' + stlop + ',' + stlam + ',' + stlom + '&info_format=text/plain&service=wms&i='
-        + pxx + '&j=' + pxy + '&width=' + pxw + '&height=' + pxh + '&version=1.3.0';
+          + stlap + ',' + stlop + ',' + stlam + ',' + stlom + '&info_format=text/plain&service=wms&i='
+          + pxx + '&j=' + pxy + '&width=' + pxw + '&height=' + pxh + '&version=1.3.0';
 
     let url = rqtHead + rqtTail;
     //returns the data fetched from GEBCO website
