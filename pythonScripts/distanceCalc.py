@@ -1,7 +1,7 @@
-#Last modified by Stefan Kildal-Brandt 6/23/26
+# Last modified by Stefan Kildal-Brandt 6/23/26
 
-#This script takes a few hours to run
-#Recommended to only use to build list of float data from scratch
+# This script takes a few hours to run
+# Recommended to only use to build list of float data from scratch
 
 import urllib2
 from urllib2 import HTTPError
@@ -121,10 +121,10 @@ for item in arr:
             legTime = round((item[j][1]-item[j-1][1])/(60*60), 2)
             currDistance += legDistance
             currTime = round(currTime + legTime, 2)
-        GEBCODepth = getGEBCODepth(item[j][0])
-        indStr ="{} {} {} {} {} {}".format(int(legDistance), legTime, int(getDisplacement(item[0][0], item[j][0])), int(currDistance), currTime, GEBCODepth)
-        indArr.append(indStr)
-    with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(floats[k]), 'w') as f:
+            GEBCODepth = getGEBCODepth(item[j][0])
+            indStr ="{} {} {} {} {} {}".format(int(legDistance), legTime, int(getDisplacement(item[0][0], item[j][0])), int(currDistance), currTime, GEBCODepth)
+            indArr.append(indStr)
+     with open('/home/www/people/sk8609/DEVearthscopeoceans/data/FloatInfo/{}.txt'.format(floats[k]), 'w') as f:
         for line in indArr:
             f.write(line)
             if line!=indArr[-1]:
