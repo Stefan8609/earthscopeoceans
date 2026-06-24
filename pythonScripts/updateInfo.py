@@ -4,7 +4,7 @@
 # Looks at SOM float data and runs an update to add to FloatInfo
 # 
 # Last update by Frederik J Simons on 06/10/2026
-# Last update by Stefan Kildal-Brandt on 6/23/2026
+# Last update by Stefan Kildal-Brandt on 6/24/2026
 
 import urllib2
 from urllib2 import HTTPError
