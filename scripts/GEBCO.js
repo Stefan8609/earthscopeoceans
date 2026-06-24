@@ -1,4 +1,13 @@
 // Last modified by SKB, JNR, and FJS 6/23/26
+// 
+//      Both scripts query the GEBCO database at a chosen location
+//
+//      Here is an example of a working link:
+//          https://wms.gebco.net/mapserv?request=getfeatureinfo&service=wms&crs=EPSG:4326&layers=GEBCO_LATEST_2&query_layers=GEBCO_LATEST_2&BBOX=65.0874996667,23.2291666667,65.1041663333,23.2458333333&info_format=text/plain&service=wms&i=2&j=2&width=5&height=5&version=1.3.0
+//
+//      Here is an example of a link that isn't working:
+//          https://wms.gebco.net/mapserv?request=getfeatureinfo&service=wms&crs=EPSG:4326&layers=GEBCO_LATEST_2&query_layers=GEBCO_LATEST_2&BBOX=91,-10,91.0166667,-9.9833333&info_format=text/plain&service=wms&i=2&j=2&width=5&height=5&version=1.3.0
+//
 // Function to get GEBCO depth from a datapoint parameter
 function makeWMSrequest(dataPoint) {
     // This is inspired by the known 2014 resolution
