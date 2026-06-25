@@ -808,7 +808,7 @@ async function initMap(listener) {
     //Grab float data from distances.txt
     async function grabAllData(){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData("https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/distances.txt", 'text');
+        let data = await fetchAndDecodeFloatData("data/FloatInfo/distances.txt", 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
@@ -820,7 +820,7 @@ async function initMap(listener) {
     // Gets time, distance, and depth
     async function grabIndData(Float){
         let dataArr=[];
-        let data = await fetchAndDecodeFloatData(`https://geoweb.princeton.edu/people/sk8609/DEVearthscopeoceans/data/FloatInfo/${Float}.txt`, 'text');
+        let data = await fetchAndDecodeFloatData(`data/FloatInfo/${Float}.txt`, 'text');
         tempArr = data.split('\n');
         for(let i=0; i<tempArr.length;i++){
             let splitArr = tempArr[i].split(' ');
