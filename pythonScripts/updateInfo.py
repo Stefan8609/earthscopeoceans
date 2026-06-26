@@ -13,16 +13,16 @@ import re
 
 from helper_functions import getDisplacement, monthToNum, toUTCTime, getGEBCODepth 
 
-# Grab the path
+# Grab the path from a headerless bare text file
 path_file = open('pathNames.txt', 'r')
 path = path_file.readlines()[0].strip()
 path_file.close()
 
-# Grab the floats
+# Grab the floats from a headerless bare text file
 float_file = open('floatNames.txt', 'r')
 floats = []
 float_lines = float_file.readlines()
-for line in float_lines[1:]:
+for line in float_lines[0:]:
     for flo in line.split(' '):
         flo = flo.strip()
         if flo:
@@ -45,7 +45,7 @@ for flo in floats:
         print("No existing file for {}. Creating one.".format(flo))
         fileArr = []
         fileArrLines = []
-    
+
     # Grab the data that are stored on geoweb for that float
     urlFile = urllib2.urlopen('https://geoweb.princeton.edu/people/simons/SOM/{}_all.txt'.format(flo))
     urlArr = []
@@ -92,19 +92,17 @@ for flo in floats:
                 prevLatLng = [float(urlArr[index-1][3]), float(urlArr[index-1][4])]
                 legDist = int(getDisplacement(prevLatLng, latLng))
                 currDist += legDist
-
                 legTime = round((toUTCTime('{} {}'.format(urlArr[index][1], urlArr[index][2]))
-                                 - toUTCTime('{} {}'.format(urlArr[index-1][1], urlArr[index-1][2])))/(60*60), 2)
+                             - toUTCTime('{} {}'.format(urlArr[index-1][1], urlArr[index-1][2])))/(60*60), 2)
                 currTime = round(currTime + legTime, 2)
-
+            
             GEBCODepth = getGEBCODepth(latLng)
             string = '{} {} {} {} {} {}'.format(legDist, legTime, totDisp, currDist, currTime, GEBCODepth)
 
             # Add newline unless this is the first line of a brand-new file
             if not(len(fileArr) == 0 and index == -numNewLines):
                 if len(fileArr) == 0 or not(index == -numNewLines and '\n' in fileArr[-1]):
-                    appendFile.write('\n')
-
+                     appendFile.write('\n')
             appendFile.write(string)
 
         appendFile.close()

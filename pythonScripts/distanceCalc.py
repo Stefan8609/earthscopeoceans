@@ -16,16 +16,16 @@ import re
 
 from helper_functions import getDisplacement, monthToNum, toUTCTime, getGEBCODepth
 
-# Grab the path
+# Grab the path from a headerless bare text file
 path_file = open('pathNames.txt', 'r')
 path = path_file.readlines()[0].strip()
 path_file.close()
 
-# Grab the floats
+# Grab the floats from a headerless bare text file
 float_file = open('floatNames.txt', 'r')
 floats = []
 float_lines = float_file.readlines()
-for line in float_lines[1:]:
+for line in float_lines[0:]:
     for flo in line.split(' '):
         flo = flo.strip()
         if flo:
@@ -50,7 +50,7 @@ for i in floats:
     arr.append(temparr)
 
 #Writes the proper displacement, distance, and time for each float
-#into a string and creates an array of the strings for all floats
+#into a string and creates an array of the strings for all floats 
 k=0
 strArr = []
 for item in arr:
@@ -78,7 +78,7 @@ for item in arr:
         f.close()
 
     #Writes the proper displacement, distance, and time for each float
-    #into a string and creates an array of the strings for all floats
+    #into a string and creates an array of the strings for all floats 
     totalDistance = 0
     for i in range(len(item)-1):
         totalDistance += getDisplacement(item[i][0], item[i+1][0])
