@@ -35,7 +35,7 @@ for flo in floats:
     print(flo)
 
     # Grab the current data that are stored on geoweb for that float
-    floatInfoPath = os.path.join(path, 'data', 'FloatInfo', '{}.txt'.format(flo))
+    floatInfoPath = os.path.join(path,'data','FloatInfo','{}.txt'.format(flo))
     if os.path.exists(floatInfoPath):
         file = open(floatInfoPath, 'r')
         fileArr = file.readlines()
@@ -110,7 +110,7 @@ for flo in floats:
         appendFile.close()
 
 # Write data in for all tabs
-with open(os.path.join(path, 'data', 'FloatInfo', 'distances.txt'), 'w') as f:
+with open(os.path.join(path,'data','FloatInfo','distances.txt'), 'w') as f:
     for line in allInfoStrings:
         f.write(line)
         if line!=allInfoStrings[-1]:

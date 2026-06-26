@@ -70,7 +70,7 @@ for item in arr:
             GEBCODepth = getGEBCODepth(item[j][0])
             indStr ="{} {} {} {} {} {}".format(int(legDistance), legTime, int(getDisplacement(item[0][0], item[j][0])), int(currDistance), currTime, GEBCODepth)
             indArr.append(indStr)
-     with open(os.path.join(path, 'data', 'FloatInfo', '{}.txt'.format(floats[k])), 'w') as f:
+     with open(os.path.join(path,'data','FloatInfo','{}.txt'.format(floats[k])), 'w') as f:
         for line in indArr:
             f.write(line)
             if line!=indArr[-1]:
@@ -88,7 +88,7 @@ for item in arr:
     k+=1
 
 #Writes float information into a text file labelled 'distances.txt'
-with open(os.path.join(path, 'data', 'FloatInfo', 'distances.txt'), 'w') as f:
+with open(os.path.join(path,'data','FloatInfo','distances.txt'), 'w') as f:
     for line in strArr:
         f.write(line)
         if line != strArr[-1]:

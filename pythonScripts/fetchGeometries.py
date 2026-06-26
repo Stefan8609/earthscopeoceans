@@ -66,7 +66,7 @@ def writeAllFile(list):
 		obj['{}'.format(MRGID)] = arr
 	string = json.dumps(obj)
 	string = string.replace(', ', ',')
-	with open(os.path.join(path, 'data', 'EEZData', 'AllGeometries', 'w') as f:
+	with open(os.path.join(path,'data','EEZData','AllGeometries', 'w') as f:
 		f.write(string)
 		f.close()
 
