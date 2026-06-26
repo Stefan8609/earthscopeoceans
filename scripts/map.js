@@ -1,7 +1,7 @@
 /**
 * Map class
  @author Jonah Rubin and Stefan Kildal-Brandt 07/06/2022
- Last modified by Frederik J Simons 01/07/2024
+ Last modified by Frederik J Simons 06/26/2026
 */
 
 async function initMap(listener) {
@@ -32,13 +32,14 @@ async function initMap(listener) {
         "princeton": true,
         "sustech": true,
         "jamstec": true,
-        "stanford": true
+        "stanford": true,
+        "observatorio": true
     };
 
     //Initializing list of All EEZ and their coordinates
-    let EEZList = await fetchAndDecodeFloatData('https://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllEEZ','text');
+    let EEZList = await fetchAndDecodeFloatData('data/EEZData/AllEEZ','text');
     EEZList = JSON.parse(EEZList);
-    let AllGeometries = await fetchAndDecodeFloatData('https://geoweb.princeton.edu/people/simons/earthscopeoceans/data/EEZData/AllGeometries','text');
+    let AllGeometries = await fetchAndDecodeFloatData('data/EEZData/AllGeometries','text');
     AllGeometries = JSON.parse(AllGeometries);
 
     // some default locations
@@ -46,6 +47,7 @@ async function initMap(listener) {
     let papeete = { lat: -17.53733, lng: -149.5665 };
 
     // set up icons found at https://sites.google.com/site/gmapsdevelopment/
+    // note it didn't like the semicolon for the &oacute etc
     let iconBase = 'https://maps.google.com/mapfiles/ms/icons/';
     let icons = {
         geoazur: {
@@ -68,9 +70,13 @@ async function initMap(listener) {
             name: 'Stanford',
             icon: iconBase + 'green-dot.png'
         },
+        observatorio: {
+            name: 'Observatório',
+            icon: iconBase + 'purple-dot.png'
+        },
         dead: {
             name: 'Inactive',
-            icon: iconBase + 'purple-dot.png'
+            icon: iconBase + 'blue.png'
         }
     };
 
@@ -352,6 +358,8 @@ async function initMap(listener) {
                         // JAMSTEC MERMAIDs
                     } else if (dataPoints[i].owner === "jamstec") {
                         marker.setIcon(icons.jamstec.icon);
+                    } else if (dataPoints[i].owner === "observatorio") {
+                        marker.setIcon(icons.observatorio.icon);
                     }
 
                     // expand bounds to fit all markers
@@ -732,7 +740,7 @@ async function initMap(listener) {
                         }
                         catch (err){
                            console.log(err)
-                        } 
+                        }
                         dropMarkers.push(marker);
                         //Sets an info marker for the map
                         setInfoWindow('drop', 0, 0, marker, 0, 0, 0, 0, 0, 0, 0, GEBCODepth, EEZ, lat, lng);
