@@ -31,6 +31,7 @@ body  {
 .carousel-data {
     width: calc(100px + 30vw);
     height:  500px;
+    height:  450px;
 }
 
 /*main jumbotron*/
