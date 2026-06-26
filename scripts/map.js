@@ -615,7 +615,7 @@ async function initMap(listener) {
     iwindows = [];
     }
 
-    // handles async use of data
+    // Gets the SOM data as pushed to geoweb
     async function getFloatData(name) {
         clearMarkers();
 
@@ -629,7 +629,6 @@ async function initMap(listener) {
         let dataPromise = fetchAndDecodeFloatData(url, 'text');
         let values = await Promise.all([dataPromise]);
         return values[0];
-
     }
 
     setUpEvents();
@@ -813,7 +812,7 @@ async function initMap(listener) {
         }
     }
 
-    //Grab float data from distances.txt
+    //Grab float data from distances.txt as computed from pyscripts
     async function grabAllData(){
         let dataArr=[];
         let data = await fetchAndDecodeFloatData("data/FloatInfo/distances.txt", 'text');
@@ -825,7 +824,7 @@ async function initMap(listener) {
         return dataArr
     }
     
-    // Gets time, distance, and depth
+    // Gets time, distance, and depth as computed from pyscripts
     async function grabIndData(Float){
         let dataArr=[];
         let data = await fetchAndDecodeFloatData(`data/FloatInfo/${Float}.txt`, 'text');
