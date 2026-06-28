@@ -1,5 +1,14 @@
-Python scripts that write the text files that are used in the Javascript functions.
+Python scripts that prepare 
 
-These scripts take some of the load off of the front end so that the website is able to function faster.
+distanceCalc.py is a LONG calculation of all floatNames.txt
+updateInfo.py is a SHORT verification of all floatNames.txt
 
-distanceCalc.py is tied to a cronjob that runs every 6 hours; this is to ensure that float information is always up to date.
+They make
+* distances.txt
+whose float names needs to match the list in
+* SOM/all.txt
+exactly, that is, matching
+* floatNames.txt
+
+One way in other words would be to get the floatNames from all.txt although that
+may not always be robust during all stages of development.
