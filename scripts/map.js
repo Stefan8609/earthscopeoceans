@@ -48,6 +48,7 @@ async function initMap(listener) {
 
     // set up icons found at https://sites.google.com/site/gmapsdevelopment/
     // note it didn't like the semicolon for the &oacute etc
+    // See the findings https://kml4earth.appspot.com/icons.html
     let iconBase = 'https://maps.google.com/mapfiles/ms/icons/';
     let icons = {
         geoazur: {
