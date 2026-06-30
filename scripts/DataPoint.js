@@ -2,7 +2,7 @@
 DataPoint object class
 
 @author Jonah Rubin and Frederik J Simons 04/17/2024
-Last modified by Frederik J Simons 06/27/2026
+Last modified by Frederik J Simons 06/29/2026
 */
 
 const JAMSTEC_FLOATS = [
@@ -11,6 +11,7 @@ const JAMSTEC_FLOATS = [
     "W0109", "W0110", "W0111", "W0112", "W0113"
 ];
 const GEOAZUR_FLOATS = [
+    "W0115","W0116","W0117","W0118","W0119","W0120","W0121"
 ];
 const PRINCETON_FLOATS = [
     "P0013","P0018", "P0019", "P0020", "P0021","P0023"
