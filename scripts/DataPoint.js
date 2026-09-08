@@ -2,7 +2,7 @@
 DataPoint object class
 
 @author Jonah Rubin and Frederik J Simons 04/17/2024
-Last modified by Frederik J Simons 06/29/2026
+Last modified by Frederik J Simons 09/08/2026
 */
 
 const JAMSTEC_FLOATS = [
@@ -14,7 +14,7 @@ const GEOAZUR_FLOATS = [
     "W0115","W0116","W0117","W0118","W0119","W0120","W0121"
 ];
 const PRINCETON_FLOATS = [
-    "P0013","P0018", "P0019", "P0020", "P0021","P0023"
+    "P0013","P0018", "P0019", "P0020", "P0021"
 ];
 const SUSTECH_FLOATS = [
 ];
@@ -33,7 +33,7 @@ const DEAD_FLOATS = [
     "R0065", "R0066", "R0067", "R0071", "R0072", "P0026", "P0028",
     "P0029", "P0031", "P0032", "P0033", "P0035", "P0036", "P0037",
     "P0038", "T0102", "P0040", "P0044", "R0061", "R0062", "R0069",
-    "R0073", "T0100", "P0056"
+    "R0073", "T0100", "P0056", "P0023"
 ];
 // Anything you wish to hide?
 const NO_FLOATS = [
